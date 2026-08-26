@@ -131,19 +131,9 @@ Each tuple represents one coin:
 (x, y)
 ```
 
-## 10. Validation
 
-The program checks whether at least two coins are entered:
 
-```python
-if n < 2:
-    print("At least two coins are required.")
-    return
-```
-
-At least two coins are required to find a pair.
-
-## 11. Time Complexity
+## 10. Time Complexity
 
 The program uses two nested loops:
 
@@ -159,16 +149,7 @@ Therefore:
 
 This approach is called **Brute Force** because it checks every possible pair.
 
-## 12. How to Run
 
-Open the Python file in VS Code and run:
-
-```text
-python ClosestPairCoins.py
-```
-
-Then enter the number of coins and their coordinates.
-
-## 13. Conclusion
+## 11. Conclusion
 
 This program demonstrates how the **Brute Force approach** can be used to solve the Closest Pair problem. It calculates the distance between every pair of coins and identifies the two coins that are closest to each other.
