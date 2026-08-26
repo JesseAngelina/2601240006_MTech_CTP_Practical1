@@ -1,88 +1,153 @@
-# Product Price Sorting System Using Quick Sort
+Yes 👍 Based on this **QuickSort Delivery Orders** program, here is a simple README you can keep with the project.
 
-## 1. Objective
+# README – Delivery Order Route Priority
 
-To develop a Python-based product price sorting system using the Quick Sort algorithm. The program sorts products according to their prices in ascending order while maintaining the association between each product and its price.
+## 1. Project Title
 
-## 2. Real-World Application
+**Delivery Order Route Priority using Quick Sort**
 
-Online shopping platforms often allow customers to sort products based on price. Quick Sort can be used to efficiently arrange products from the lowest price to the highest price.
+## 2. Description
 
-## 3. Input
+This Python program stores delivery orders along with their delivery distance and sorts the orders based on distance using the **Quick Sort algorithm**.
 
-The program uses a list containing:
+The order with the shortest delivery distance will appear first, helping to prioritize nearby deliveries.
 
-* Product name
-* Product price
+## 3. Objective
+
+* Accept the number of delivery orders.
+* Store the **Order ID** and **Delivery Distance**.
+* Sort the delivery orders based on distance.
+* Display the orders from **shortest distance to longest distance**.
+* Prevent invalid inputs such as zero/negative number of orders and negative distances.
+
+## 4. Algorithm Used
+
+**Quick Sort**
+
+Quick Sort works by:
+
+1. Selecting a pivot element.
+2. Comparing other elements with the pivot.
+3. Placing smaller elements before the pivot.
+4. Placing larger elements after the pivot.
+5. Recursively sorting the left and right portions.
+
+In this program, the **delivery distance** is used for comparison.
+
+## 5. Input
+
+The program takes:
+
+* Number of delivery orders
+* Order ID
+* Delivery distance in kilometers
 
 Example:
 
-* Laptop - 55000
-* Mobile Phone - 25000
-* Headphones - 3000
-* Smart Watch - 7000
-* Tablet - 18000
-
-## 4. Output
-
-The program displays the products in ascending order of price.
-
-### Sample Output
-
 ```text
-Products sorted by price:
-Headphones - 3000
-Smart Watch - 7000
-Tablet - 18000
-Mobile Phone - 25000
-Laptop - 55000
+Enter number of delivery orders: 3
+
+Enter order ID 1: ORD101
+Enter delivery distance for ORD101 (km): 15
+
+Enter order ID 2: ORD102
+Enter delivery distance for ORD102 (km): 5
+
+Enter order ID 3: ORD103
+Enter delivery distance for ORD103 (km): 10
 ```
 
-## 5. Algorithm
+## 6. Output
 
-1. Start.
-2. Create a list containing product names and their corresponding prices.
-3. Call the Quick Sort function with the first and last indexes of the list.
-4. Select the last element as the pivot.
-5. Initialize the partition index.
-6. Compare each product price with the pivot price.
-7. If the product price is less than or equal to the pivot:
+```text
+--- ORDERS SORTED BY DELIVERY DISTANCE ---
 
-   * Move the product to the appropriate position.
-   * Swap the complete product records so that the product name remains associated with its price.
-8. Place the pivot in its correct sorted position.
-9. Recursively apply Quick Sort to the elements on the left side of the pivot.
-10. Recursively apply Quick Sort to the elements on the right side of the pivot.
-11. Continue until the subarray contains zero or one element.
-12. Display the products in ascending order of price.
-13. Stop.
+Order ORD102 - 5 km
+Order ORD103 - 10 km
+Order ORD101 - 15 km
+```
 
-## 6. Time Complexity
+## 7. Main Functions
 
-### Best Case: O(n log n)
+### `quick_sort()`
 
-The pivot divides the array into two approximately equal parts at each step.
+```python
+def quick_sort(orders, low, high):
+```
 
-### Average Case: O(n log n)
+This function recursively sorts the delivery orders.
 
-On average, Quick Sort divides the data reasonably well.
+### `partition()`
 
-### Worst Case: O(n²)
+```python
+def partition(orders, low, high):
+```
 
-The worst case occurs when the selected pivot produces highly unbalanced partitions, such as when the data is already sorted and the last element is consistently selected as the pivot.
+This function selects the pivot and arranges the orders around the pivot.
 
-Therefore:
+### `main()`
 
-* Best Case: **O(n log n)**
-* Average Case: **O(n log n)**
-* Worst Case: **O(n²)**
+```python
+def main():
+```
 
-## 7. Space Complexity
+This function:
 
-**O(log n)** on average due to the recursive function calls.
+* Gets input from the user
+* Stores the orders
+* Calls Quick Sort
+* Displays the sorted result
 
-In the worst case, the recursion depth can become **O(n)** when the partitions are highly unbalanced.
+## 8. Data Structure
 
-## 8. Conclusion
+A **list of dictionaries** is used to store the orders.
 
-The Quick Sort algorithm successfully sorts the products based on their prices while preserving the relationship between product names and prices. It provides efficient average-case performance and can be useful for sorting products in online shopping applications.
+Example:
+
+```python
+orders = [
+    {"id": "ORD101", "distance": 15},
+    {"id": "ORD102", "distance": 5}
+]
+```
+
+## 9. Validation
+
+The program checks:
+
+```python
+if n <= 0:
+```
+
+to make sure the number of orders is greater than zero.
+
+It also checks:
+
+```python
+if distance < 0:
+```
+
+to prevent negative delivery distances.
+
+## 10. Time Complexity
+
+* **Best/Average Case:** `O(n log n)`
+* **Worst Case:** `O(n²)`
+* **Space Complexity:** `O(log n)` on average because of recursion.
+
+## 11. How to Run
+
+1. Open the Python file in VS Code.
+2. Open the **Terminal**.
+3. Run the program using:
+
+```text
+python QuickSort_DeliveryOrders.py
+```
+
+4. Enter the required delivery order details.
+5. The program displays the orders sorted by delivery distance.
+
+## 12. Conclusion
+
+The program demonstrates how the **Quick Sort algorithm** can be applied to a real-world delivery system to prioritize orders based on delivery distance.
