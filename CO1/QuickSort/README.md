@@ -1,4 +1,4 @@
-Yes 👍 Based on this **QuickSort Delivery Orders** program, here is a simple README you can keep with the project.
+
 
 # README – Delivery Order Route Priority
 
