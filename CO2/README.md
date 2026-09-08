@@ -1,137 +1,161 @@
-Python Programming & Object-Oriented Programming Assignment
+Yes 👍 Got it. You want the **README in exactly this simple format**, without adding extra sections like Requirements, Learning Objectives, Author, etc.
 
-Overview
+I would only fix the **table formatting** at the bottom. Use this as your final `README.md`:
 
-This repository contains 7 Python programs covering Python type hints, Union types, Generics, Dataclasses, Inheritance, and Composition.
+````markdown
+# Python Programming & Object-Oriented Programming Assignment
+
+## Overview
+
+This repository contains **7 Python programs** covering Python type hints, Union types, Generics, Dataclasses, Inheritance, and Composition.
 
 The programs are based on the questions provided in class and demonstrate the practical use of these concepts.
 
-Questions Covered
+---
 
-Q1. PEP 484 Type Hints
+## Questions Covered
 
-Scenario:
+### Q1. PEP 484 Type Hints
+
+**Scenario:**
 A banking system processes transactions. Developers want static type checking to reduce errors.
 
-Concept: PEP 484 Type Hints
+**Concept:** PEP 484 Type Hints
 
 Type hints specify the expected data types of function parameters and return values. They improve code readability and help static type-checking tools identify type-related errors.
 
-Key Syntax:
+**Key Syntax:**
 
+```python
 def function_name(parameter: type) -> return_type:
+````
 
-Program: Q1_PEP484_TypeHints.py
+**Program:** `Q1_PEP484_TypeHints.py`
 
-Q2. PEP 604 Union Types
+---
 
-Scenario:
+### Q2. PEP 604 Union Types
+
+**Scenario:**
 A customer may provide either a mobile number or an email address as a primary contact.
 
-Concept: PEP 604 Union Types
+**Concept:** PEP 604 Union Types
 
-PEP 604 provides a concise way to specify that a value can have multiple possible types using the | operator.
+PEP 604 provides a concise way to specify that a value can have multiple possible types using the `|` operator.
 
-Key Syntax:
+**Key Syntax:**
 
+```python
 str | int
+```
 
-Program: Q2_PEP604_Union.py
+**Program:** `Q2_PEP604_Union.py`
 
-Q3. Generic Types
+---
 
-Scenario:
+### Q3. Generic Types
+
+**Scenario:**
 An enterprise application needs repositories for different objects. The same repository logic should be reused.
 
-Concept: Generics
+**Concept:** Generics
 
 Generics allow a class or function to work with different data types while maintaining type safety and code reusability.
 
-Key Concepts:
+**Key Concepts:**
 
-TypeVar creates a type variable.
+* `TypeVar` creates a type variable.
+* `Generic` is used to define a generic class.
+* `T` represents a generic type.
 
-Generic is used to define a generic class.
+**Program:** `Q3_Generic_Types.py`
 
-T represents a generic type.
+---
 
-Program: Q3_Generic_Types.py
+### Q4. PEP 695 Generic Syntax
 
-Q4. PEP 695 Generic Syntax
-
-Scenario:
+**Scenario:**
 A production engineering team uses Python's newer generic syntax to create a reusable data store.
 
-Concept: PEP 695
+**Concept:** PEP 695
 
 PEP 695 provides a modern and simpler syntax for defining generic classes using type parameters directly in square brackets.
 
-Key Syntax:
+**Key Syntax:**
 
+```python
 class DataStore[T]:
+```
 
-Program: Q4_PEP695_Generic.py
+**Program:** `Q4_PEP695_Generic.py`
 
-Requirement: Python 3.12 or newer.
+**Requirement:** Python 3.12 or newer.
 
-Q5. Dataclass
+---
 
-Scenario:
+### Q5. Dataclass
+
+**Scenario:**
 An inventory system stores product ID, product name, quantity, and price. The class mainly stores data and requires little custom initialization logic.
 
-Concept: Dataclasses
+**Concept:** Dataclasses
 
-The @dataclass decorator is used to create data-holding classes with less boilerplate code. It automatically provides methods such as __init__(), __repr__(), and __eq__().
+The `@dataclass` decorator is used to create data-holding classes with less boilerplate code. It automatically provides methods such as `__init__()`, `__repr__()`, and `__eq__()`.
 
-Key Syntax:
+**Key Syntax:**
 
+```python
 from dataclasses import dataclass
 
 @dataclass
 class InventoryItem:
     ...
+```
 
-Program: Q5_Dataclass.py
+**Program:** `Q5_Dataclass.py`
 
-Q6. Inheritance - Banking Application
+---
 
-Scenario:
+### Q6. Inheritance - Banking Application
+
+**Scenario:**
 A banking application has Savings Account and Current Account classes. Both accounts have common attributes such as account number, account holder name, and balance, but their withdrawal rules are different.
 
-Concept: Inheritance
+**Concept:** Inheritance
 
 Inheritance allows a child class to acquire common properties and methods from a parent class.
 
-Class Structure:
+**Class Structure:**
 
+```text
              BankAccount
               /        \
              /          \
      SavingsAcc       CurrentAcc
+```
 
-BankAccount → Parent/Base class
+* `BankAccount` → Parent/Base class
+* `SavingsAcc` → Child/Derived class
+* `CurrentAcc` → Child/Derived class
+* Common attributes are defined in `BankAccount`.
+* `withdraw()` is overridden in each child class because the withdrawal rules differ.
 
-SavingsAcc → Child/Derived class
+**Program:** `Q6_Inheritance_Banking.py`
 
-CurrentAcc → Child/Derived class
+---
 
-Common attributes are defined in BankAccount.
+### Q7. Composition - E-Commerce Order
 
-withdraw() is overridden in each child class because the withdrawal rules differ.
-
-Program: Q6_Inheritance_Banking.py
-
-Q7. Composition - E-Commerce Order
-
-Scenario:
+**Scenario:**
 An e-commerce order contains multiple product objects and also has a payment object.
 
-Concept: Composition
+**Concept:** Composition
 
-Composition represents a strong "has-a" relationship, where one class contains objects of other classes.
+Composition represents a strong **"has-a" relationship**, where one class contains objects of other classes.
 
-Class Structure:
+**Class Structure:**
 
+```text
              Order
             /     \
            /       \
@@ -139,63 +163,30 @@ Class Structure:
        / | \
       /  |  \
  Product Product Product
+```
 
-Order has multiple Product objects.
+* `Order` has multiple `Product` objects.
+* `Order` has a `Payment` object.
+* `add_product()` adds products to the order.
+* `set_payment()` assigns a payment object to the order.
 
-Order has a Payment object.
+**Program:** `Q7_Composition_Ecommerce.py`
 
-add_product() adds products to the order.
+---
 
-set_payment() assigns a payment object to the order.
+## Concepts Summary
 
-Program: Q7_Composition_Ecommerce.py
+| Q.No | Topic                  | Main Concept            |
+| ---- | ---------------------- | ----------------------- |
+| Q1   | PEP 484                | Type Hints              |
+| Q2   | PEP 604                | Union Types             |
+| Q3   | Generic Types          | `TypeVar` and `Generic` |
+| Q4   | PEP 695                | Modern Generic Syntax   |
+| Q5   | Dataclass              | `@dataclass`            |
+| Q6   | Banking Application    | Inheritance             |
+| Q7   | E-Commerce Application | Composition             |
 
-Concepts Summary
+```
 
-Q.No
-
-Topic
-
-Main Concept
-
-Q1
-
-PEP 484
-
-Type Hints
-
-Q2
-
-PEP 604
-
-Union Types
-
-Q3
-
-Generic Types
-
-TypeVar and Generic
-
-Q4
-
-PEP 695
-
-Modern Generic Syntax
-
-Q5
-
-Dataclass
-
-@dataclass
-
-Q6
-
-Banking Application
-
-Inheritance
-
-Q7
-
-E-Commerce Application
-
-Composition
+**This is the version I'd use for GitHub.** It keeps the README clean and directly matches the material ma'am gave you.
+```
