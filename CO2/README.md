@@ -1,6 +1,3 @@
-Yes 👍 Got it. You want the **README in exactly this simple format**, without adding extra sections like Requirements, Learning Objectives, Author, etc.
-
-I would only fix the **table formatting** at the bottom. Use this as your final `README.md`:
 
 ````markdown
 # Python Programming & Object-Oriented Programming Assignment
