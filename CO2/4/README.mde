@@ -1,5 +1,10 @@
 # Q4 — PEP 695 Generic Syntax
 
+Copy-paste this directly into your `README.md`:
+
+````markdown
+# Q4 — PEP 695 Generic Syntax
+
 ## Definition
 
 **PEP 695** introduces a modern and simplified syntax for defining **generic classes, functions, and type aliases** in Python.
@@ -33,3 +38,201 @@ T = TypeVar("T")
 
 class DataStore(Generic[T]):
     ...
+````
+
+### PEP 695 Syntax
+
+PEP 695 provides a simpler syntax:
+
+```python
+class DataStore[T]:
+    ...
+```
+
+Here, `T` is the **type parameter** of the generic class.
+
+---
+
+## Why Use PEP 695?
+
+PEP 695 provides:
+
+* Simpler generic syntax
+* Better readability
+* Less boilerplate code
+* Clear declaration of type parameters
+* Reusable and type-safe classes
+
+---
+
+## Syntax
+
+```python
+class ClassName[T]:
+    ...
+```
+
+For example:
+
+```python
+class DataStore[T]:
+    ...
+```
+
+---
+
+## Implementation
+
+The `DataStore` class is created using PEP 695 syntax.
+
+It can be specialized for different types:
+
+```python
+DataStore[int]
+DataStore[str]
+```
+
+Thus, the same class can be reused for integers, strings, or other data types.
+
+---
+
+## Python Program
+
+```python
+class DataStore[T]:
+
+    def __init__(self):
+        self.data: list[T] = []
+
+    def add(self, item: T) -> None:
+        self.data.append(item)
+
+    def get_all(self) -> list[T]:
+        return self.data
+
+
+numbers = DataStore[int]()
+
+numbers.add(10)
+numbers.add(20)
+
+print(numbers.get_all())
+```
+
+---
+
+## Input
+
+```text
+10
+20
+```
+
+The values are added to the `DataStore` using:
+
+```python
+numbers.add(10)
+numbers.add(20)
+```
+
+---
+
+## Output
+
+```text
+[10, 20]
+```
+
+---
+
+## Explanation
+
+### 1. Declaring the Generic Class
+
+```python
+class DataStore[T]:
+```
+
+This defines `DataStore` as a generic class with `T` as its type parameter.
+
+---
+
+### 2. Creating the Data List
+
+```python
+self.data: list[T] = []
+```
+
+The list is designed to store values of type `T`.
+
+---
+
+### 3. Adding Data
+
+```python
+def add(self, item: T) -> None:
+```
+
+The `add()` method accepts an item of the generic type `T`.
+
+---
+
+### 4. Retrieving Data
+
+```python
+def get_all(self) -> list[T]:
+```
+
+The method returns a list containing values of type `T`.
+
+---
+
+### 5. Creating an Integer DataStore
+
+```python
+numbers = DataStore[int]()
+```
+
+Here, `T` becomes `int`.
+
+Therefore, `numbers` is a `DataStore` designed to store integer values.
+
+---
+
+## Key Takeaway
+
+**PEP 695 provides a modern and concise way to define generic classes.**
+
+Instead of:
+
+```python
+T = TypeVar("T")
+
+class DataStore(Generic[T]):
+```
+
+we can write:
+
+```python
+class DataStore[T]:
+```
+
+This makes generic code simpler, clearer, and easier to maintain.
+
+---
+
+## Python Version
+
+PEP 695 generic syntax requires **Python 3.12 or newer**.
+
+---
+
+## Technologies Used
+
+* **Python 3.12+**
+* **PEP 695**
+* **Generic Classes**
+* **Type Parameters**
+* **Type Annotations**
+
+````
