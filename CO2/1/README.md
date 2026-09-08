@@ -1,6 +1,3 @@
-Absolutely. For GitHub, I’d make it **clean, professional, and concise**—something a professor can open and immediately understand.
-
-Copy-paste this directly into `README.md`:
 
 ````markdown
 # Q1 — PEP 484 Type Hints
@@ -126,25 +123,3 @@ For the given transaction amount `5000.0`, the condition `amount > 0` is satisfi
 
 PEP 484 type hints provide a clear way to document expected data types and enable static type-checking tools to detect potential errors early in the development process.
 
----
-
-## Technologies Used
-
-* **Python 3**
-* **PEP 484 Type Hints**
-* **Static Type Checking**
-
-````
-
-### 📁 Your Q1 GitHub folder
-
-Keep it simple:
-
-```text
-Q1_PEP484_TypeHints/
-│
-├── Q1_PEP484_TypeHints.py
-└── README.md
-````
-
-This looks much more **professional than just putting the code and output**. The professor can see the **problem → objective → concept → implementation → input → output → explanation → takeaway** in a logical flow.
