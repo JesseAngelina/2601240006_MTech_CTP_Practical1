@@ -1,0 +1,35 @@
+# Q4 — PEP 695 Generic Syntax
+
+## Definition
+
+**PEP 695** introduces a modern and simplified syntax for defining **generic classes, functions, and type aliases** in Python.
+
+It allows type parameters to be declared directly using square brackets `[]`, making generic code shorter and easier to read.
+
+---
+
+## Problem Statement
+
+A production engineering team needs a reusable container for storing different types of data. Apply **PEP 695 generic syntax** to create a generic `DataStore` class.
+
+---
+
+## Objective
+
+To demonstrate the use of **PEP 695** to create a reusable generic class that can store and retrieve values of different data types.
+
+---
+
+## Concept
+
+Before PEP 695, generic classes were commonly written using `TypeVar` and `Generic`.
+
+### Traditional Syntax
+
+```python
+from typing import Generic, TypeVar
+
+T = TypeVar("T")
+
+class DataStore(Generic[T]):
+    ...
