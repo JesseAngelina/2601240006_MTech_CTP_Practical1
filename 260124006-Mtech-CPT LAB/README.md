@@ -1,4 +1,4 @@
-# 260124007-Mtech-CPT LAB
+# 260124006-Mtech-CPT LAB
 
 This folder contains the **13 Python CPT exercises** shown in the exercise list.
 
