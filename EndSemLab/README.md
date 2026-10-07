@@ -1,4 +1,4 @@
-Absolutely. Since you're uploading this **Merge Sort experiment** to GitHub, use this as your `README.md`. It includes the **aim, algorithm, code explanation, input/output, complexity, comparison, and viva questions**.
+
 
 ```markdown
 # Merge Sort – Railway Passenger Age Analysis
